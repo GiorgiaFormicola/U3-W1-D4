@@ -36,7 +36,7 @@ class SingleBook extends Component {
               {this.props.book.category}
             </Badge>
           </Card.Text> */}
-            {this.state.selected === true && <CommentArea></CommentArea>}
+            {this.state.selected === true && <CommentArea bookID={this.props.book.asin}></CommentArea>}
           </Card.Body>
         </Card>
       </Col>
