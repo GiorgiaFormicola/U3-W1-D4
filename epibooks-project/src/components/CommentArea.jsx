@@ -2,7 +2,6 @@ import { Component } from "react";
 import CommentList from "./CommentList";
 
 const URL = "https://striveschool-api.herokuapp.com/api/comments/";
-// const URLprova = "https://striveschool-api.herokuapp.com/api/comments/0316438960";
 const key =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2OTczM2Q1ODg1ZTNiMTAwMTViNWVkOTIiLCJpYXQiOjE3NjkxNjAwMjQsImV4cCI6MTc3MDM2OTYyNH0.44JOk6CRTq-SU-frlMxtHzTbDZh8D09nLZXgdFFal2A";
 
@@ -27,7 +26,9 @@ class CommentArea extends Component {
         }
       })
       .then((bookCommentsArray) => {
-        console.log(bookCommentsArray);
+        this.setState({
+          commentsArray: bookCommentsArray,
+        });
       })
       .catch((err) => {
         console.log("ERROR", err);
@@ -37,7 +38,7 @@ class CommentArea extends Component {
     this.getComments();
   }
   render() {
-    return <CommentList commentsList={this.state.commentsArray}></CommentList>;
+    return <CommentList commentsArray={this.state.commentsArray}></CommentList>;
   }
 }
 
