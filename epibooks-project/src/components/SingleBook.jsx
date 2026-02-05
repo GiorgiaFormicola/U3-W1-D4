@@ -2,6 +2,7 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 // import Badge from "react-bootstrap/Badge";
 import { Component } from "react";
+import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = {
@@ -14,7 +15,7 @@ class SingleBook extends Component {
         <Card
           bg="dark"
           text="light"
-          className={"shadow rounded-4 overflow-hidden h-100 border-secondary" + (this.state.selected ? " border-danger border-4" : "")}
+          className={"shadow rounded-4 overflow-hidden border-secondary h-100" + (this.state.selected ? " border-danger border-4" : "")}
         >
           <Card.Img
             variant="top"
@@ -35,6 +36,7 @@ class SingleBook extends Component {
               {this.props.book.category}
             </Badge>
           </Card.Text> */}
+            {this.state.selected === true && <CommentArea></CommentArea>}
           </Card.Body>
         </Card>
       </Col>
