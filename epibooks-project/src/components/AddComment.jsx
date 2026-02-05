@@ -22,8 +22,8 @@ class AddComment extends Component {
           fetch(URL, {
             method: "POST",
             body: JSON.stringify(this.state.newComment),
-            Authorization: key,
             headers: {
+              Authorization: key,
               "Content-Type": "application/json",
             },
           })
