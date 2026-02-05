@@ -1,5 +1,6 @@
 import { Component } from "react";
 import CommentList from "./CommentList";
+import AddComment from "./AddComment";
 
 const URL = "https://striveschool-api.herokuapp.com/api/comments/";
 const key =
@@ -38,7 +39,12 @@ class CommentArea extends Component {
     this.getComments();
   }
   render() {
-    return <CommentList commentsArray={this.state.commentsArray}></CommentList>;
+    return (
+      <>
+        <CommentList commentsArray={this.state.commentsArray}></CommentList>
+        <AddComment bookID={this.props.bookID}></AddComment>
+      </>
+    );
   }
 }
 
